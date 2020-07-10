@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<style>
+body
+{
+ 
+ background-image:url('https://i.ibb.co/c64fsxz/beautiful-panoramic-landscape-seascape-ocean-with-white-cloud-blue-sky-leisure-travel-holiday-74190.jpg');
+ background-repeat:no-repeat;
+ background-attachment: fixed;
+ background-size: cover;
+
+ opacity:0.85;
+ 
+
+}
+h1
+{
+ text-align:center;
+}
+label{
+  margin-left:20%;
+  color:black;
+opacity:1;
+  font-size:20px;
+ fonr-weight:bold;
+}
+input[type=text], input[type=password]{
+  width: 60%;
+  padding: 10px;
+ 
+  background-color:rgba(26,26,26,0.3);
+  border: 1px solid white;
+  border-radius:3%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-left:20%;
+  color:white;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type="text"]::-webkit-input-placeholder {
+color: white !important;
+}
+input[type="password"]::-webkit-input-placeholder {
+color: white !important;
+}
+input[type=submit] {
+  background-color:#f48ba0
+;
+  
+  color: black;
+  border: none;
+  cursor: pointer;
+  margin-left:40%;
+  
+  padding:15px;
+}
+
+p
+{
+color:red;
+text-align:center;
+}
+.container {
+  width:30%;
+  margin-top:8%;
+  color:black;
+  margin-left:35%;
+  margin-right:35%;
+  height:350px;
+  background-color:rgba(26,26,26,0.2);
+  
+}
+img
+{
+  margin-left:40%;
+  margin-top:-40px;
+  height:80px;
+  width:80px;
+  border:1px solid black;
+  border-radius:50%;
+}
+}
+
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Login Page</h1>
+<hr>
+<div class="container">
+<img src="https://i.ibb.co/6FYDBww/download-3.jpg" >
+<form th:action="@{/login}" th:object="${loginForm}" method="POST" >
+<p th:if="${invalidCredentials}" class="error" >UserName or password is wrong !! Try again</p>
+<br>
+<label >Name : </label>
+<br>
+<input type="text" name="username" id="name" required placeholder="Enter your name">
+<br>
+<label>Password :</label>
+<br>
+<input type="password" name="password" id="pass" required placeholder="Enter your password">
+<br>
+<br>
+<input type="submit" value="Login">
+
+</form>
+
+</div>
+</body>
+</html>
